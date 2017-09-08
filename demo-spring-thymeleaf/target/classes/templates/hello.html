@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+  	<meta charset="utf-8" />
+    <title>Spring-Boot-MVC-Thymeleaf-Webanwendung</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body onload='document.f.text.focus();'>
+    <h2>Spring-Boot-MVC-Thymeleaf-Webanwendung</h2>
+    <h3>Neues Element</h3>
+    <form name='f' method="POST">
+      <input type="hidden" th:if="${_csrf}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+      <input type="text" name="sentence" placeholder="Text" size="30" />
+      <select name="language">
+      	<option>EN</option>
+      	<option>DE</option>
+      </select>
+      <input type="submit" value="hinzuf&uuml;gen" />
+    </form>
+    <h3>Gespeicherte Elemente</h3>
+    <div th:if="${#lists.isEmpty( helloList )}"><p>Keine Datenelemente vorhanden.</p></div>
+    <div th:unless="${#lists.isEmpty( helloList )}">
+      <table>
+        <tr th:each="me : ${helloList}">
+          <td th:text="${me.sentence}">Hallo</td>
+          <td th:text="${me.language}">DE</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
