@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/hellos")
+@RequestMapping("/hello")
 public class HelloController {
 	
 	private List<Hello> data = new LinkedList<>(Arrays.asList(
@@ -20,13 +20,14 @@ public class HelloController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String getListe(Model model) {
 		model.addAttribute("helloList", data);
+		// Rückgabe = Dateiname (ohne Endung)
 		return "hello";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String addToListe(Hello hello) {
 		data.add(hello);
-		return "redirect:/hellos";
+		return "redirect:/hello";
 	}
 
 }
