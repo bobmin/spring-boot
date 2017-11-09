@@ -2,9 +2,7 @@ package bob.spring.demo.jdbctemplate;
 
 public class Hello {
 	
-	private static final long serialVersionUID = 1L;
-
-    private Long id;
+	private Long id;
     private String sentence;
     private String language;
     

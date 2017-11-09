@@ -2,9 +2,7 @@ package bob.spring.demo.thymeleaf;
 
 public class Hello {
 	
-	private static final long serialVersionUID = 1L;
-
-    private String sentence;
+	private String sentence;
     private String language;
     
     public Hello() {

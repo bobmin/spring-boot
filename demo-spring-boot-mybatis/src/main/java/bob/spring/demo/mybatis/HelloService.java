@@ -1,6 +1,5 @@
 package bob.spring.demo.mybatis;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
