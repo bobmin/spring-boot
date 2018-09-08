@@ -67,8 +67,6 @@ public class UserService {
 
 		private final String hash;
 
-		private String ip = null;
-
 		public User(String uid, String hash) {
 			Objects.requireNonNull(uid);
 			Objects.requireNonNull(hash);
@@ -78,14 +76,6 @@ public class UserService {
 
 		public String getUid() {
 			return uid;
-		}
-
-		public void setIp(String value) {
-			this.ip = value;
-		}
-
-		public String getIp() {
-			return ip;
 		}
 
 	}
