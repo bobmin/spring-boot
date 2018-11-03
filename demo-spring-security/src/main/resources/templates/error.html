@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Ups!</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"></link>
+  </head>
+
+  <html>
+    <h1>Ups, das h&auml;tte nicht passieren d&uuml;rfen...</h1>
+    <img th:src="@{/img/avatar_shocked.png}" />
+    <p>Es gibt ein Problem mit der angefragten Webseite: <span th:text="${path}" /></p>
+    <p th:text="${'Fehler:    ' + status + ', ' + error + ', ' + exception}" />
+    <p th:text="${'Meldung:   ' + message}" />
+    <p th:text="${'Zeitpunkt: ' + #dates.format( timestamp, 'yyyy-MM-dd HH:mm:ss' )}" />
+  </html>
+
+</html>

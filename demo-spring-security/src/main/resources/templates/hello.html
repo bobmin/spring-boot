@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+  	<meta charset="utf-8" />
+    <title>Spring-Boot-MVC-Thymeleaf-Webanwendung</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body onload='document.f.text.focus();'>
+    <p th:inline="text">Username: [[${#httpServletRequest.remoteUser}]]</p>
+	<form th:action="@{/logout}" method="post">
+	    <input type="submit" value="Sign Out"/>
+	</form>
+  </body>
+</html>
